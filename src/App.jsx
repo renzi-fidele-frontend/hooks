@@ -1,7 +1,7 @@
-import { createContext, useEffect, useReducer, useState } from "react";
+import { createContext, useReducer } from "react";
 import "./App.css";
-import HookUseReducer from "./EstudandoHooks/HookUseReducer";
 import HookUseCallback from "./EstudandoHooks/HookUseCallback";
+import HookUseMemo from "./EstudandoHooks/HookUseMemo";
 
 export const ThemeContext = createContext();
 
@@ -25,11 +25,12 @@ function App() {
    return (
       <div className="App" style={{ backgroundColor: theme.theme, color: theme.color }}>
          <ThemeContext.Provider value={{ theme, themeDispatch }}>
-            {/*Use Reducer*/}
-            <HookUseReducer />
+            {/*UseReducer*/}
 
             {/*UseCallback */}
-            <HookUseCallback />
+
+            {/*UseMemo */}
+            <HookUseMemo />
          </ThemeContext.Provider>
       </div>
    );
